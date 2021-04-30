@@ -7,7 +7,7 @@ export default class RabbitService {
 
     constructor() {
         if (!process.env.RABBITMQ_USER || !process.env.RABBITMQ_PASSWORD || !process.env.RABBITMQ_HOST || !process.env.RABBITMQ_PORT) {
-            console.error('Error at loading RabbitMQ auth')
+            console.error(`Error at loading RabbitMQ auth`)
             process.exit(1)
         }
 

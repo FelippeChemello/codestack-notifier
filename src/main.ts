@@ -1,3 +1,4 @@
+require('dotenv').config()
 import { InterfaceNotification } from './models/InterfaceNotification'
 import EmailService from './services/EmailService'
 import RabbitService from './services/RabbitService'
