@@ -28,15 +28,15 @@ export default class EmailService {
     }
 
     async sendMail(notification: InterfaceNotification) {
-        console.log(notification)
+        console.log(`[${new Date()}] Sending notification about ${notification.app} ${notification.status}`)
 
-        const info = await this.mailer.sendMail({
+        const mailInfo = await this.mailer.sendMail({
             from: this.mailFrom,
             to: this.mailTo,
-            subject: `${notification.status} em ${notification.app}`,
+            subject: `${notification.status} at ${notification.app}`,
             text: JSON.stringify(notification.message),
         })
 
-        console.log(info)
+        console.log(`[${new Date()}] Email about ${notification.app} ${notification.status} sended. ${mailInfo.response}`)
     }
 }
